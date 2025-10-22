@@ -18,9 +18,10 @@
     <div class="company-info">
       <p><strong>OneStep Engineering Solutions</strong></p>
       <p>Dealers in Architectural Services and Machineries</p>
-      <p>Construction, Project Management, Engineering Consultancy</p>
+      <p>Project Management, Engineering Consultancy,</p>
+      <p> Engineering Consultancy, Construction</p>
       <p>Kampala, Uganda</p>
-      <p>Email: <a href="mailto:onestepengineeringsolutions@gmail.com">onestepengineeringsolutions@gmail.com</a></p>
+      <p>Email: <a href="mailto:onestepengineeringsolutions@gmail.com">onestepengineeringsolution@gmail.com</a></p>
       <p>Tel: +256 781 932182 | WhatsApp: +256 781 669400</p>
     </div>
 
@@ -53,12 +54,15 @@
 
     <div class="thank-you">
       <p><strong>Thank you for your business!</strong></p>
+  <input type="file" id="loadFile" style="display:none" onchange="loadInvoice(event)" />
+  <button class="print-btn" onclick="document.getElementById('loadFile').click()">⬆️ Save Data</button>
     </div>
 
-    <div class="footer">
-      <button class="print-btn" onclick="window.print()">🖨️ Print Hard Copy</button>
-      <button class="print-btn" onclick="window.print()">💾 Save as PDF</button>
-    </div>
+   <div class="footer">
+  <button class="print-btn" onclick="window.print()">🖨️ Print Hard Copy</button>
+  <button class="print-btn" onclick="window.print()">💾 Save as PDF</button>
+
+</div>
 
     <div class="payment-summary">
       <div>Total: <span id="summary-total">0</span></div>
