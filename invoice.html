@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Invoice — OneStep Engineering Solutions</title>
+   <link rel="stylesheet" href="invoice.css">
+</head>
+<body>
+  <div class="container">
+    <div class="top-header">
+      <div class="logo-section">
+        <img src="/image/lg.jpg" alt="OneStep Engineering Solutions Logo" class="logo">
+      </div>
+      <div class="title">INVOICE</div>
+    </div>
+
+    <div class="company-info">
+      <p><strong>OneStep Engineering Solutions</strong></p>
+      <p>Dealers in Architectural Services and Machineries</p>
+      <p>Construction, Project Management, Engineering Consultancy</p>
+      <p>Kampala, Uganda</p>
+      <p>Email: <a href="mailto:onestepengineeringsolutions@gmail.com">onestepengineeringsolutions@gmail.com</a></p>
+      <p>Tel: +256 781 932182 | WhatsApp: +256 781 669400</p>
+    </div>
+
+    <div class="invoice-meta">
+      <div><strong>Invoice To:</strong> <input type="text" id="to" placeholder="Enter client" class="item-input" /></div>
+      <div><strong>Invoice No:</strong> <input type="text" id="invno" placeholder="INV-" class="item-input" /></div>
+      <div><strong>Date:</strong> <input type="date" id="date" class="item-input" /></div>
+    </div>
+
+    <table id="items-table">
+      <thead>
+        <tr>
+          <th>Description</th>
+          <th>Qty</th>
+          <th>Price</th>
+          <th>Total</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody id="items-body"></tbody>
+    </table>
+
+    <button class="add-row-btn" onclick="addRow()">+ Add Item</button>
+
+    <div class="payment-channels">
+      <strong>Payment Channels</strong>
+      <p>Cash: OneStep Engineering Solutions</p>
+      <p>Mobile Money: 0781 669400 - Andrew Turinawe</p>
+      <p>Bank: Centenary Bank, Acc No. 3201531181 - OneStep Engineering Solutions</p>
+    </div>
+
+    <div class="thank-you">
+      <p><strong>Thank you for your business!</strong></p>
+    </div>
+
+    <div class="footer">
+      <button class="print-btn" onclick="window.print()">🖨️ Print Hard Copy</button>
+      <button class="print-btn" onclick="window.print()">💾 Save as PDF</button>
+    </div>
+
+    <div class="payment-summary">
+      <div>Total: <span id="summary-total">0</span></div>
+      <div>Paid in: <span id="summary-paidin">0.00</span></div>
+      <div>Balance: <span id="summary-balance">0</span> UGX</div>
+    </div>
+  </div>
+  <script src="/invoice.js"></script>
+</body>
+</html>
