@@ -46,7 +46,10 @@ function renderTable() {
             <td><input type="number" class="item-input" min="0" value="${item.qty}" onchange="updateQty(${idx}, this.value)" style="width:40px;text-align:center;" /></td>
             <td><input type="number" class="item-input" min="0" value="${item.price}" onchange="updatePrice(${idx}, this.value)" style="width:85px;text-align:right;" /></td>
             <td style="text-align:right">${(item.qty * item.price).toLocaleString()}</td>
-            <td><button class="action-btn" onclick="removeRow(${idx})">Delete</button></td>
+            <td>
+              <button class="action-btn" onclick="editRow(${idx})">Edit</button>
+              <button class="action-btn" onclick="removeRow(${idx})">Delete</button>
+            </td>
           </tr>`;
     });
     for (let i = items.length; i < 7; i++) {
@@ -54,6 +57,7 @@ function renderTable() {
     }
     updateSummary();
 }
+
 
 // --- CRUD FUNCTIONS ---
 function addRow() {
@@ -91,6 +95,19 @@ function updateSummary() {
     document.getElementById("summary-total").textContent = total.toLocaleString();
     document.getElementById("summary-paidin").textContent = paidIn.toLocaleString();
     document.getElementById("summary-balance").textContent = (total - paidIn).toLocaleString();
+    saveInvoiceData();
+}
+function editRow(idx) {
+    const newDesc = prompt("Enter new description:", items[idx].desc);
+    if (newDesc !== null) items[idx].desc = newDesc;
+
+    const newQty = prompt("Enter new quantity:", items[idx].qty);
+    if (newQty !== null) items[idx].qty = parseInt(newQty) || 0;
+
+    const newPrice = prompt("Enter new price:", items[idx].price);
+    if (newPrice !== null) items[idx].price = parseInt(newPrice) || 0;
+
+    renderTable();
     saveInvoiceData();
 }
 
